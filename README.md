@@ -1,4 +1,4 @@
-This is practical QR convertor for a text data.
+This is a practical QR convertor for a text data.
 
 - Don't copy/paste a really long text, it may result in an empty QR code.
 
