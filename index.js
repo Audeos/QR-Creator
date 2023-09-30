@@ -10,8 +10,8 @@ inquirer.prompt([{name: "data", message: "Convert my data:"}, {name: "type", typ
    const type = answers.type;
    const qr_img = qr.image(data, {type: type});
    const fileLines = fs.readdirSync(path).length;
-   qr_img.pipe(fs.createWriteStream(`${path}/QR ${fileLines !== 0 ? fileLines : ""}.${type.toLowerCase()}`));
-   fs.writeFile(contents, `QR ${fileLines + 1} (${type.toUpperCase()}) : ${data}\n`, {flag:"a",encoding:"utf-8"}, (err) => {
+   qr_img.pipe(fs.createWriteStream(`${path}/QR${fileLines !== 1 ? " " + fileLines : ""}.${type.toLowerCase()}`));
+   fs.writeFile(contents, `QR ${fileLines !== 1 ? fileLines + " " : ""}(${type.toUpperCase()}) : ${data}\n`, {flag: "a", encoding: "utf-8"}, (err) => {
 	  if (err) console.log("Error!", err);
 	  else console.log("Successful!");
    })
