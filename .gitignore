@@ -1,2 +1,2 @@
 out/QR_Contents.txt
-out/QR_Library/*
+out/QR_Library/**
